@@ -1,0 +1,8 @@
+//
+// Created by ownstreamer on 25.7.23.
+//
+
+#ifndef TOOLBOX_TOOLBOX_META_CONCEPTS_HPP_
+#define TOOLBOX_TOOLBOX_META_CONCEPTS_HPP_
+
+#endif //TOOLBOX_TOOLBOX_META_CONCEPTS_HPP_

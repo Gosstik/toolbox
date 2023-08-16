@@ -1,0 +1,10 @@
+# clion
+cmake-build-*/
+
+# other
+bin/
+lib/
+
+# dev
+playground/
+tests/**/play.cpp
