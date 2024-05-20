@@ -2,7 +2,7 @@
 
 #include <toolbox/std/concepts.hpp>
 
-namespace tb {
+namespace toolbox {
 
 ///**************************************************************************///
 ///                            integral_constant                             ///

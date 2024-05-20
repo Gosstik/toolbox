@@ -1,13 +1,12 @@
 #include <cassert>
 #include <iostream>
-
-#include <toolbox/containers/vector.hpp>
+#include <vector>
 
 int main() {
-  std::cout << "Start play vector\n";
-  Vector<int> vec;
+  std::cout << "Start play vector.\n";
+  std::vector<int> vec;
   assert(vec.size() == 0);
-  vec.inc_size();
+  vec.push_back(1);
   assert(vec.size() == 1);
-  std::cout << "Finish play vector\n";
+  std::cout << "Finish play vector.\n";
 }

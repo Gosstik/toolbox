@@ -1,5 +1,5 @@
 # clion
-cmake-build-*/
+cmake-build*/
 
 # other
 bin/
@@ -7,4 +7,8 @@ lib/
 
 # dev
 playground/
+debug.info
 tests/**/play.cpp
+coverage/
+tmp_test/
+build/

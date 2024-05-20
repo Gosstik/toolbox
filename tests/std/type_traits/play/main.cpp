@@ -1,3 +1,5 @@
-//
-// Created by ownstreamer on 25.7.23.
-//
+#include <type_traits>
+
+int main() {
+  return 0;
+}

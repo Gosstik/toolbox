@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace tb {
+namespace toolbox {
 
 namespace detail {
 

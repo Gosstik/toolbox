@@ -12,4 +12,3 @@ add_test_suite(unit_tests TEST_EXECUTABLES unit.cpp)
 end_build_test()
 
 # --------------------------------------------------------------------
-
