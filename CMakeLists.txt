@@ -5,9 +5,9 @@ project(toolbox)
 
 # Options.
 
-option(TOOLBOX_TEST "Enable toolbox tests." ON)
-option(TOOLBOX_DEVELOPMENT "Toolbox development mode." ON)
-option(TOOLBOX_COVERAGE "Toolbox enable coverage." ON)
+option(TOOLBOX_TEST "Enable toolbox tests." OFF)
+option(TOOLBOX_DEVELOPMENT "Toolbox development mode." OFF)
+option(TOOLBOX_COVERAGE "Toolbox enable coverage." OFF)
 
 # Supress warnings from third-party/CodeCoverage
 if (TOOLBOX_COVERAGE)
