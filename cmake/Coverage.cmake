@@ -25,7 +25,7 @@ function(make_header_coverage TEST_EXECUTABLES)
         replace_tests_with_toolbox(HEADER_DIR "${SECTION_DIR}")
         get_header_for_coverage(HEADER "${HEADER_DIR}" "${TEST_NAME}")
         get_header_coverage_target(COVERAGE_TARGET)
-        project_log("Make coverage target: ${COVERAGE_TARGET}." CYAN)
+        toolbox_log("Make coverage target: ${COVERAGE_TARGET}." CYAN)
 
         get_filename_component(HEADER_DIR "${HEADER}" DIRECTORY)
         file(GLOB_RECURSE EXCLUDE_FILES
@@ -41,7 +41,7 @@ function(make_header_coverage TEST_EXECUTABLES)
                 EXCLUDE ${EXCLUDE_FILES} ${COVERAGE_EXCLUDES}
                 LCOV_ARGS ${COVERAGE_LCOV_ARGS}
         )
-        project_log("Coverage target was made successfully." CYAN)
+        toolbox_log("Coverage target was made successfully." CYAN)
     endif()
 endfunction()
 
@@ -57,7 +57,7 @@ function(make_directory_coverage CMAKE_CURRENT_SOURCE_DIR_IN)
         get_directory_coverage_target(COVERAGE_TARGET ${CMAKE_CURRENT_SOURCE_DIR_IN})
         set(EXE_COVERAGE_TARGET "exe_${COVERAGE_TARGET}")
 
-        project_log("Make directory coverage: ${COVERAGE_TARGET}." CYAN)
+        toolbox_log("Make directory coverage: ${COVERAGE_TARGET}." CYAN)
 
         # Find coverage sources.
         file(GLOB_RECURSE COVERAGE_SOURCE
@@ -102,7 +102,7 @@ function(make_directory_coverage CMAKE_CURRENT_SOURCE_DIR_IN)
                 EXCLUDE ${COVERAGE_EXCLUDES}
                 LCOV_ARGS ${COVERAGE_LCOV_ARGS}
         )
-        project_log("Directory coverage was made successfully." CYAN)
+        toolbox_log("Directory coverage was made successfully." CYAN)
     endif()
 endfunction()
 

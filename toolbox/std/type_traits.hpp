@@ -434,7 +434,7 @@ namespace detail {
 ///                                 is_void                                  ///
 ///**************************************************************************///
 
-//template <typename T>
+//template <typename IntT>
 //struct is_void
 
 

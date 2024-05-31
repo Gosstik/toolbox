@@ -138,7 +138,7 @@ bool operator!=(const list_iterator<T, kIsConst1>& lhs,
 
 } // namespace detail
 
-// T must be publicly derived from `base_list_node`
+// IntT must be publicly derived from `base_list_node`
 template <typename T>
 class list {
  public:

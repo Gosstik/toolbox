@@ -11,13 +11,13 @@ endfunction()
 
 # --------------------------------------------------------------------
 
-macro(get_play_target VAR)
+macro(toolbox_get_play_target VAR)
     set(${VAR} ${SECTION_NAME}_${TEST_NAME}_play)
 endmacro()
 
 # --------------------------------------------------------------------
 
-macro(get_test_target VAR NAME)
+macro(toolbox_get_test_target VAR NAME)
     set(${VAR} ${SECTION_NAME}_${TEST_NAME}_${NAME})
 endmacro()
 

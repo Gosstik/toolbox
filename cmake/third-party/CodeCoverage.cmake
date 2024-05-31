@@ -597,7 +597,7 @@ endfunction() # setup_target_for_coverage_gcovr_html
 #     NO_DEMANGLE                                 # Don't demangle C++ symbols
 #                                                 #  even if c++filt is found
 #     SKIP_HTML                                   # Don't create html report
-#     POST_CMD perl -i -pe s!${PROJECT_SOURCE_DIR}/!!g ctest_coverage.json  # E.g. for stripping source dir from file paths
+#     POST_CMD perl -other_i -pe s!${PROJECT_SOURCE_DIR}/!!g ctest_coverage.json  # E.g. for stripping source dir from file paths
 # )
 function(setup_target_for_coverage_fastcov)
 

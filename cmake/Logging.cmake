@@ -1,5 +1,5 @@
 # COLOR can be passed as additional argument.
-function(project_log MESSAGE)
+function(toolbox_log MESSAGE)
     if(${ARGC} EQUAL 2)
         set(COLOR ${ARGV1})
         message_color_mode("[${PROJECT_NAME}] ${MESSAGE}" ${COLOR} STATUS)
@@ -9,12 +9,12 @@ function(project_log MESSAGE)
 endfunction()
 
 # for cmake debug
-macro(project_dev_log MESSAGE)
-    project_log("${MESSAGE}" BOLD_CYAN)
+macro(toolbox_dev_log MESSAGE)
+    toolbox_log("${MESSAGE}" BOLD_CYAN)
 endmacro()
 
 
-macro(project_warning MESSAGE)
+macro(toolbox_warn MESSAGE)
     message(WARNING "[${PROJECT_NAME}] ${MESSAGE}")
 endmacro()
 

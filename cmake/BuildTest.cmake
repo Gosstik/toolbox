@@ -13,7 +13,7 @@
 macro(begin_build_test)
     # Test variables
     set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-    project_log("Start processing ${TEST_DIR}." GREEN)
+    toolbox_log("Start processing ${TEST_DIR}." GREEN)
     get_filename_component(TEST_NAME ${TEST_DIR} NAME)
 
     # Section variables
@@ -27,19 +27,19 @@ endmacro()
 
 function(add_test_playground PLAY_DIR)
     if(TOOLBOX_DEVELOPMENT AND EXISTS "${TEST_DIR}/${PLAY_DIR}")
-        get_play_target(PLAY_TARGET_NAME)
-        project_log("Add test playground: ${PLAY_TARGET_NAME}")
+        toolbox_get_play_target(PLAY_TARGET_NAME)
+        toolbox_log("Add test playground: ${PLAY_TARGET_NAME}")
 
         # Get playground sources
         file(GLOB_RECURSE PLAY_SOURCES
                 ${CMAKE_CURRENT_SOURCE_DIR}/${PLAY_DIR}/*.hpp
                 ${CMAKE_CURRENT_SOURCE_DIR}/${PLAY_DIR}/*.cpp)
-        project_log("PLAY_SOURCES = ${PLAY_SOURCES}")
+        toolbox_log("PLAY_SOURCES = ${PLAY_SOURCES}")
 
         # Make executable
         add_executable(${PLAY_TARGET_NAME} ${PLAY_SOURCES})
         target_link_libraries(${PLAY_TARGET_NAME} PRIVATE toolbox)
-        project_log("Test playground was added successfully.")
+        toolbox_log("Test playground was added successfully.")
     endif()
 endfunction()
 
@@ -49,14 +49,14 @@ endfunction()
 
 function(add_test_suite SUITE_NAME TEST_EXECUTABLES_OUT)
     if(TOOLBOX_TEST)
-        get_test_target(TEST_TARGET_NAME ${SUITE_NAME})
-        project_log("Add test suite: ${TEST_TARGET_NAME}")
+        toolbox_get_test_target(TEST_TARGET_NAME ${SUITE_NAME})
+        toolbox_log("Add test suite: ${TEST_TARGET_NAME}")
 
         # Get test sources
         prepend(TEST_SOURCES "${TEST_DIR}/" ${ARGN})
 
         # Make test target
-        project_log("TEST_SOURCES = ${TEST_SOURCES}")
+        toolbox_log("TEST_SOURCES = ${TEST_SOURCES}")
         add_executable(${TEST_TARGET_NAME} ${TEST_SOURCES})
         target_link_libraries(${TEST_TARGET_NAME} PUBLIC ${TEST_DEPENDENCIES})
         gtest_discover_tests(${TEST_TARGET_NAME})
@@ -64,7 +64,7 @@ function(add_test_suite SUITE_NAME TEST_EXECUTABLES_OUT)
         # Append test target to TEST_EXECUTABLES_OUT
         list(APPEND ${TEST_EXECUTABLES_OUT} ${TEST_TARGET_NAME})
         set(${TEST_EXECUTABLES_OUT} ${${TEST_EXECUTABLES_OUT}} PARENT_SCOPE)
-        project_log("Test suite was added successfully.")
+        toolbox_log("Test suite was added successfully.")
     endif()
 endfunction()
 
@@ -74,5 +74,5 @@ endfunction()
 
 macro(end_build_test)
     # Test variables
-    project_log("Finished processing ${TEST_DIR}." MAGENTA)
+    toolbox_log("Finished processing ${TEST_DIR}." MAGENTA)
 endmacro()

@@ -7,7 +7,7 @@ namespace toolbox {
 namespace detail {
 
 /// ReplaceFirstArg
-// Get Template<T, Types...> and U.
+// Get Template<IntT, Types...> and U.
 // Return Template<U, Types...>.
 template <typename Template, typename U>
 struct ReplaceFirstArg {};
