@@ -9,7 +9,8 @@ file(GLOB_RECURSE LIB_HEADERS "${LIB_PATH}/*.hpp")
 
 # Build library
 toolbox_log("Build library.")
-add_library(toolbox STATIC ${LIB_CXX_SOURCES} ${LIB_HEADERS})
+add_library(toolbox STATIC ${LIB_CXX_SOURCES} ${LIB_HEADERS}
+        algo/binary_search.hpp)
 target_include_directories(toolbox PUBLIC ${LIB_INCLUDE_PATH})
 set_target_properties(toolbox PROPERTIES LINKER_LANGUAGE CXX)
 
