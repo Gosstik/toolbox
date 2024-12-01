@@ -37,8 +37,8 @@ CheckOptions:
   readability-identifier-naming.TypeTemplateParameterCase: 'CamelCase'
   readability-identifier-naming.ValueTemplateParameterCase: 'CamelCase'
 
-  readability-identifier-naming.ConstantPrefix: 'k'
-  readability-identifier-naming.ConstantCase: 'CamelCase'
+  # readability-identifier-naming.ConstantPrefix: 'k'
+  # readability-identifier-naming.ConstantCase: 'CamelCase'
   readability-identifier-naming.EnumConstantCase: 'CamelCase'
 
   readability-identifier-naming.FunctionCase: 'CamelCase'

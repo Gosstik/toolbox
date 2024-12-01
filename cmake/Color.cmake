@@ -1,3 +1,11 @@
+set(CMAKE_COLOR_DIAGNOSTICS ON)
+
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    add_compile_options(-fdiagnostics-color=always)
+elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    add_compile_options(-fcolor-diagnostics)
+endif()
+
 if(NOT WIN32)
     string(ASCII 27 Esc)
     set(COLOUR_RESET "${Esc}[m")

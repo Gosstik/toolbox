@@ -1,3 +1,7 @@
+if(TOOLBOX_COVERAGE)
+  include(third-party/CodeCoverage)
+endif()
+
 # Make COVERAGE_EXCLUDE.
 
 set(EXCLUDE_PREFIX "${PROJECT_SOURCE_DIR}/")
@@ -85,9 +89,6 @@ function(make_directory_coverage CMAKE_CURRENT_SOURCE_DIR_IN)
         # Remove sources of playgrounds from test sources.
         list(REMOVE_AT TEST_SOURCES ${USELESS_INDS})
 
-
-#        set(TEST_SOURCES "/home/ownstreamer/proga/toolbox/tests/std/concepts/unit.cpp")
-
         # Make executable from test sources.
         add_executable(${EXE_COVERAGE_TARGET} ${TEST_SOURCES})
         target_link_libraries(${EXE_COVERAGE_TARGET} PUBLIC ${TEST_DEPENDENCIES})
@@ -97,7 +98,6 @@ function(make_directory_coverage CMAKE_CURRENT_SOURCE_DIR_IN)
         setup_target_for_coverage_lcov(
                 NAME "${COVERAGE_TARGET}"
                 EXECUTABLE "${EXE_COVERAGE_TARGET}"
-#                BASE_DIRECTORY "${COVERAGE_SOURCE_DIR}"
                 BASE_DIRECTORY "${PROJECT_SOURCE_DIR}"
                 EXCLUDE ${COVERAGE_EXCLUDES}
                 LCOV_ARGS ${COVERAGE_LCOV_ARGS}

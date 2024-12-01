@@ -12,3 +12,7 @@ tests/**/play.cpp
 coverage/
 tmp_test/
 build/
+FullyDisconnected.cmake
+
+# not ready
+cmake-variants.yaml

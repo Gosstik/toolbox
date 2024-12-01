@@ -17,8 +17,19 @@ macro(begin_build_test)
     get_filename_component(TEST_NAME ${TEST_DIR} NAME)
 
     # Section variables
-    get_filename_component(SECTION_DIR ${TEST_DIR} DIRECTORY)
+    if (NOT DEFINED USE_CMAKE_DIR_AS_SECTION)
+      get_filename_component(SECTION_DIR ${TEST_DIR} DIRECTORY)
+    else()
+      set(SECTION_DIR "${TEST_DIR}")
+    endif()
+
     get_section_name(SECTION_NAME ${SECTION_DIR})
+
+    if (NOT DEFINED USE_CMAKE_DIR_AS_SECTION)
+      set(TEST_PREFIX "${SECTION_NAME}_${TEST_NAME}")
+    else()
+      set(TEST_PREFIX "${SECTION_NAME}")
+    endif()
 endmacro()
 
 # --------------------------------------------------------------------

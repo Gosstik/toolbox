@@ -12,19 +12,24 @@ endfunction()
 # --------------------------------------------------------------------
 
 macro(toolbox_get_play_target VAR)
-    set(${VAR} ${SECTION_NAME}_${TEST_NAME}_play)
+  set(${VAR} ${TEST_PREFIX}_play)
+    # if (NOT DEFINED USE_CMAKE_DIR_AS_SECTION)
+    #   set(${VAR} ${SECTION_NAME}_${TEST_NAME}_play)
+    # else()
+    #   set(${VAR} ${SECTION_NAME}_play)
+    # endif()
 endmacro()
 
 # --------------------------------------------------------------------
 
 macro(toolbox_get_test_target VAR NAME)
-    set(${VAR} ${SECTION_NAME}_${TEST_NAME}_${NAME})
+    set(${VAR} ${TEST_PREFIX}_${NAME})
 endmacro()
 
 # --------------------------------------------------------------------
 
 macro(get_header_coverage_target VAR)
-    set(${VAR} "lcov_${SECTION_NAME}_${TEST_NAME}_hpp")
+    set(${VAR} "lcov_${TEST_PREFIX}_hpp")
 endmacro()
 
 # --------------------------------------------------------------------
