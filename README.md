@@ -10,7 +10,7 @@ Library with c++ code.
 
 ## Development
 
-Fast build (always build library):
+### Fast build (always build library)
 
 ```bash
 ./build.sh d # development, build playgrounds
@@ -25,7 +25,7 @@ cmake --build . --target help | grep <target>
 make <target>
 ```
 
-Step by step build:
+### Step by step build
 
 ```bash
 mkdir build && cd build
@@ -44,7 +44,7 @@ cmake --build . --target help
 # Example: ./tests/container/vector/container_vector_unit_tests
 ```
 
-Logging in cmake:
+### Logging in cmake
 
 ```cmake
 toolbox_log("Custom log");
