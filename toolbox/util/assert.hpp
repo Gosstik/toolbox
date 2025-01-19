@@ -19,6 +19,7 @@
     if (!(cond)) {                                                           \
       std::cerr << "Toolbox assertion '"                                     \
       << #cond << "' failed: " << error << '\n';                             \
+      TOOLBOX_UNREACHABLE();                                                 \
     }                                                                        \
   } while (false)
 
